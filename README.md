@@ -28,3 +28,17 @@ $ python3 app.py
 
 * [dreamlayers/em-dosbox: An Emscripten port of DOSBox](https://github.com/dreamlayers/em-dosbox)
 * [db48x/emularity: easily embed emulators](https://github.com/db48x/emularity)
+
+## 修改記錄
+
+### templates/game.html
+
+```
+"{{ url_for('static', filename="games/bin/{}.zip".format(game_info["identifier"])) }}"),
+```
+
+修改為 
+
+```
+"{{'/static/games/bin/{}.zip'.format(game_info["identifier"])}}"),
+```
